@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Montserrat Thin';
+    background-color: #363431;
+}
+
+/*SCROLLBAR TWEAK*/
+/*width*/
+::-webkit-scrollbar {
+    width:8px;
+}
+
+/*Track*/
+::-webkit-scrollbar-track {
+    background: #363431;
+}
+
+/*Handle*/
+::-webkit-scrollbar-thumb {
+    background-color:rgb(160, 160, 160);
+    border-radius: 15px;
+}
+
+/*Handle Hover*/
+::-webkit-scrollbar-thumb:hover {
+    background:rgb(144, 144, 144);
+    transition: 0.3s ease;
+}
+
+
+/*NAVIGATION BAR SETTINGS (DON'T CHANGE BETWEEN PAGES*/
+nav{
+    font-family:'Lucida Sans';
+    position:sticky;
+    top:0;
+    z-index:1000;
+    
+}
+
+nav h4, nav div, nav li, nav a {
+    background-color: transparent;
+}
+
+.nav-links{
+    position:absolute;
+    left:0px;
+    height:100vh;
+    background-color: #3d0000;
+    width: 18%;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+    z-index:1001;
+    list-style-type:none;
+}
+
+.nav-links li {
+    opacity:0;
+    margin-left: 1vw;
+    margin-top: 6vh;
+    text-transform:uppercase;
+}
+
+.nav-links a {
+    color:rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
+.nav-links a:hover {
+    color: #5b9bd5;
+    transition:0.3s;
+}
+/*MENU BUTTON*/
+.burger {
+    cursor: pointer;
+    position: absolute;
+    margin-top:2vh;
+    margin-left:1vw;
+    z-index:1001;
+}
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+/*Link highlight*/
+.nav-active {
+    transform:translateX(0%);
+}
+/*Name above page links in Navbar*/
+.nav-links .tag {
+    margin-top: 8vh;
+    margin-bottom: 6vh;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+/*Navmenu text format*/
+.tag h4 {
+    font-size:26px;
+}
+/*Social button formatting*/
+.nav-links .socials {
+    margin-top: 58vh;
+    display:flex;
+    justify-content:space-around;
+    margin-left:0;
+}
+/*PAGE CONTENT*/
+.content{
+    margin-left:10%;
+}
+
+h1{
+    text-align:center;
+    margin-left:0;
+    padding-top:5vh;
+    color: rgb(226, 226, 226)
+}
+
+p{
+    text-align:center;
+    padding-top:2vh;
+    color:rgb(226, 226, 226);
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns: 500px 1000px;
+    padding-top:4vh;
+    padding-bottom:10vh;
+}
+.block1{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:500px;
+    height:550px;
+    justify-content: space-between;
+}
+
+
+
+.block3{
+    margin-left: 10px;
+    width: 600px;
+    display:flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+.block4{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content: space-between;
+    width:860px;
+    margin-left: 100px;
+    margin-top:8px;
+}
+
+.block5{
+    margin-left: 10px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    width: 1450px;
+    justify-content: space-between;
+    margin-top:8px;
+}
+
+.card{
+    position: relative;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background-color: #3d0000;
+    opacity:0;
+    transition: opacity 0.3s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.card:hover .overlay{
+    opacity:0.8;
+    transition:0.4s ease;
+    cursor:pointer;
+}
+
+.card:hover .over-text {
+    opacity:1;
+    transition:0.4s ease;
+}
+
+.block2 .card{
+    width: 960px;
+}
+
+.card h2,.card h3,.card h5,.card p {
+    background-color: #3d0000;
+    color: rgb(226, 226, 226);
+    opacity:1;
+    text-align:center;
+}
+
+
+
+
+/*Menu button keyframe anim setup*/
+@keyframes navLinkFade {
+    from{
+        opacity:0;
+        transform:translateX(-50px);
+    }
+    to{
+        opacity:1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+transform:rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity:0;
+}
+
+.toggle .line3{
+    transform:rotate(45deg) translate(-5px,-6px);
+}
